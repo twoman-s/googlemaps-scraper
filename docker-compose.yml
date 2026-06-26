@@ -6,7 +6,7 @@ services:
     build: . # Build the image from the Dockerfile in the current directory
     container_name: gmaps_scraper_api_service # Optional: specify a container name
     ports:
-      - "8001:8001" # Map host port 8001 to container port 8001
+      - "8012:8001" # Map host port 8001 to container port 8001
     restart: unless-stopped # Restart policy
     working_dir: /app # Set working directory
     networks:
