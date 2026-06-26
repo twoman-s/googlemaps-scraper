@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Body
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, HttpUrl
 from typing import Optional, List, Dict, Any
 import logging
@@ -19,6 +20,15 @@ app = FastAPI(
     title="Google Maps URL Scraper API",
     description="API to extract data from a single Google Maps URL.",
     version="0.1.0",
+)
+
+# Add CORS Middleware to allow requests and handle OPTIONS calls automatically
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 class ExtractRequest(BaseModel):
