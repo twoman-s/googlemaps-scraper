@@ -9,9 +9,6 @@ services:
       - "8012:8001" # Map host port 8001 to container port 8001
     restart: unless-stopped # Restart policy
     working_dir: /app # Set working directory
-    networks:
-      - shark
-    # Tmpfs mounts to keep temporary files in RAM
     tmpfs:
       - /tmp:size=512M
       - /dev/shm:size=2G
