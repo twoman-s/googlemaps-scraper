@@ -26,8 +26,3 @@ services:
           cpus: '1'
           memory: 3G
 
-# Create the external network first with:
-# docker network create shark
-networks:
-  shark:
-    external: true
